@@ -127,6 +127,25 @@
   .inputrow input:focus{border-color:var(--copper)}
   .inputrow button{background:var(--wine);color:#fff;border:0;border-radius:999px;padding:0 18px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Instrument Sans',sans-serif}
 
+
+  /* Plano B / emergência */
+  .today{box-shadow:0 0 0 3px #C9803F, 0 2px 10px rgba(21,34,56,.07)}
+  .hoje-badge{display:inline-block;background:#C9803F;color:#fff;border-radius:999px;font-size:11px;font-weight:800;padding:3px 10px;margin-left:8px;vertical-align:middle;letter-spacing:.08em}
+  .telbtn{display:inline-block;background:var(--night);color:#fff !important;border-radius:999px;padding:8px 14px;font-size:13.5px;font-weight:700;margin:4px 6px 4px 0}
+  .telbtn.red{background:#B02A2A}
+  .cardlist{background:var(--snow);border-radius:18px;box-shadow:0 2px 10px rgba(21,34,56,.07);padding:16px 18px;margin:0 0 14px}
+  .cardlist h3{font-size:16px;color:var(--night);margin-bottom:8px}
+  .cardlist p,.cardlist li{font-size:14px}
+  .cardlist ul{padding-left:18px;margin:4px 0}
+  .esp{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
+  .esp td{border-bottom:1px solid var(--line);padding:7px 4px;vertical-align:top}
+  .esp td:first-child{font-weight:700;color:var(--wine);width:52%}
+  .avisos{background:#FFF6E5;border:2px solid #E8C98F;border-radius:16px;padding:12px 16px;margin:14px 0;display:none}
+  .avisos h3{font-size:14px;color:#8A5A10;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+  .avisos .av{border-bottom:1px dashed #E8C98F;padding:7px 0;font-size:14.5px}
+  .avisos .av small{display:block;color:#A97B26;font-size:11px;margin-top:2px}
+  .avisos .av:last-child{border-bottom:0}
+
 </style>
 </head>
 <body>
@@ -148,6 +167,10 @@
 
 <!-- ===== ABA 1: ROTEIRO ===== -->
 <div class="tabview active" id="tab-roteiro">
+<div class="avisos" id="avisos">
+  <h3>📣 Avisos do Hudson</h3>
+  <div id="avisos-list"></div>
+</div>
 <nav class="daynav" aria-label="Dias">
   <a href="#d19"><b>Dom 19</b> Chegada</a>
   <a href="#d20"><b>Seg 20</b> Centro + Sky</a>
@@ -591,6 +614,22 @@
       </div>
     </div>
 
+
+    <div class="stop">
+      <div class="time">Mala<small>🎒</small></div>
+      <div>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Protetor solar fator alto + hidratante labial (sol de montanha queima!)</label></li>
+          <li><label><input type="checkbox"> Remédio de enjoo + farmacinha básica (febre/dor infantil, curativos)</label></li>
+          <li><label><input type="checkbox"> Camadas térmicas: segunda pele, fleece, meias grossas (2 pares por pessoa p/ neve)</label></li>
+          <li><label><input type="checkbox"> Trocador portátil, fraldas extras e lanches do bebê</label></li>
+          <li><label><input type="checkbox"> Óculos de sol para todos (reflexo da neve) + gorro/luvas próprios se tiverem</label></li>
+          <li><label><input type="checkbox"> Mapa offline de Santiago baixado no Google Maps (ver aba Guia)</label></li>
+          <li><label><input type="checkbox"> Passaportes + cópias digitais no celular · pesos chilenos ou cartão sem anuidade internacional</label></li>
+        </ul>
+      </div>
+    </div>
+
     <div class="stop">
       <div class="time">Seg 20<small>à noite</small></div>
       <div>
@@ -650,6 +689,24 @@
   <h3>Ônibus (Red)</h3>
   <p>Aceita o mesmo cartão Bip!, mas com grupo grande + crianças, a combinação <b>metrô + Uber</b> é bem mais prática. Deixem o ônibus só como plano C.</p>
 
+
+  <h3>🗣️ Espanhol de sobrevivência</h3>
+  <table class="esp">
+    <tr><td>La cuenta, por favor</td><td>a conta, por favor</td></tr>
+    <tr><td>¿Dónde está el baño?</td><td>onde fica o banheiro?</td></tr>
+    <tr><td>Sin picante para los niños</td><td>sem pimenta para as crianças</td></tr>
+    <tr><td>Una silla para bebé, por favor</td><td>uma cadeirinha de bebê</td></tr>
+    <tr><td>¿Aceptan tarjeta?</td><td>aceitam cartão?</td></tr>
+    <tr><td>¿Me puede ayudar?</td><td>pode me ajudar?</td></tr>
+    <tr><td>Agua sin gas / con gas</td><td>água sem gás / com gás</td></tr>
+    <tr><td>¿Cuánto cuesta?</td><td>quanto custa?</td></tr>
+    <tr><td>Necesito un médico</td><td>preciso de um médico</td></tr>
+    <tr><td>Somos diez personas</td><td>somos dez pessoas</td></tr>
+  </table>
+
+  <h3>📵 Antes de viajar: mapa offline</h3>
+  <p>No Google Maps: busquem <b>"Santiago"</b> → toquem no nome da cidade → <b>"Fazer download"</b>. Em Farellones e na estrada de Pirque o sinal some — com o mapa baixado, o GPS continua funcionando.</p>
+
   <h3>Dinheiro e clima</h3>
   <ul>
     <li>Cartão de crédito é aceito em quase tudo; levem algo em pesos para feirinhas e gorjetas (10% é praxe em restaurantes).</li>
@@ -658,7 +715,54 @@
 </section>
 </div>
 
-<!-- ===== ABA 4: DÚVIDAS ===== -->
+
+<!-- ===== ABA: PLANO B ===== -->
+<div class="tabview" id="tab-planob">
+  <h2 class="tabtitle">Plano B 🌧️</h2>
+  <p class="tabsub">Se chover, se algo der errado, ou se precisarem de um número na mão.</p>
+
+  <div class="cardlist">
+    <h3>☔ Se chover (julho é o mês mais chuvoso)</h3>
+    <ul>
+      <li><b>MIM — Museo Interactivo Mirador</b>: o melhor museu interativo da América do Sul para crianças (sala de terremoto, bolhas gigantes, física na prática). <a href="https://maps.google.com/?q=Museo+Interactivo+Mirador,+Av.+Punta+Arenas+6711,+La+Granja" target="_blank">Av. Punta Arenas 6711 📍</a> — metrô Mirador (Linha 5 direto de Baquedano, ~25 min). Fecha às segundas.</li>
+      <li><b>KidZania</b>: cidade em miniatura onde as crianças "trabalham" — fica no Parque Araucano, atrás do Parque Arauco. <a href="https://maps.google.com/?q=KidZania+Santiago,+Presidente+Riesco+5330" target="_blank">Presidente Riesco 5330 📍</a></li>
+      <li><b>Museu Chileno de Arte Pré-Colombiana</b>: para os adultos, um dos melhores museus do continente. <a href="https://maps.google.com/?q=Museo+Chileno+de+Arte+Precolombino,+Bandera+361" target="_blank">Bandera 361, centro 📍</a></li>
+      <li><b>Costanera Center + Sky</b>: shopping gigante em cima do metrô Tobalaba — e se o céu abrir depois da chuva, a vista do Sky fica ainda mais limpa.</li>
+    </ul>
+    <div class="tip"><b class="title">Farellones com neve forte</b>Se estiver nevando muito, a estrada pode exigir correntes ou fechar. <b>A empresa do transfer avisa na véspera/madrugada</b> — se cancelarem, reagendem direto com eles (a quarta de manhã é o espaço livre) e invertam: quarta vira dia de neve, terça vira o dia de parques + compras.</div>
+  </div>
+
+  <div class="cardlist">
+    <h3>🚨 Emergências no Chile</h3>
+    <p>
+      <a class="telbtn red" href="tel:131">🚑 SAMU 131</a>
+      <a class="telbtn red" href="tel:133">🚓 Carabineros 133</a>
+      <a class="telbtn red" href="tel:132">🚒 Bombeiros 132</a>
+    </p>
+    <ul>
+      <li><b>Clínica Indisa</b> (a mais próxima do hotel, boa emergência pediátrica): <a href="https://maps.google.com/?q=Clinica+Indisa,+Av.+Santa+Maria+1810,+Providencia" target="_blank">Av. Santa María 1810, Providencia 📍</a> — 7 min de Uber</li>
+      <li><b>Clínica Alemana</b> (referência da cidade): <a href="https://maps.google.com/?q=Clinica+Alemana,+Av.+Vitacura+5951" target="_blank">Av. Vitacura 5951 📍</a> — 15 min de Uber</li>
+      <li><b>Farmácias 24h</b>: procurem "Farmacia Cruz Verde" ou "Ahumada" no Maps — há de turno a poucas quadras do hotel</li>
+      <li><b>Hotel Le Méridien</b>: <a class="telbtn" href="tel:+56226381042">📞 +56 2 2638 1042</a></li>
+      <li><b>Seguro viagem</b>: anotem aqui o número da apólice e o 0800 — <i>[EDITAR: seguradora / apólice / telefone]</i></li>
+    </ul>
+    <div class="tip"><b class="title">Mostre ao taxista</b>"Por favor, al hotel Le Méridien — Avenida Libertador Bernardo O'Higgins 136, al lado del centro cultural GAM."</div>
+  </div>
+
+  <div class="cardlist">
+    <h3>🎫 Central de reservas do grupo</h3>
+    <ul>
+      <li>✈️ Voo ida/volta: <i>[EDITAR: cia, nº do voo, localizador]</i></li>
+      <li>🏨 Hotel: Le Méridien — confirmação <i>[EDITAR]</i> · check-in 15h / check-out 12h</li>
+      <li>🚐 Transfer Farellones: <i>[EDITAR: empresa, WhatsApp, nº da reserva]</i></li>
+      <li>🍷 Transfer Concha y Toro: <i>[EDITAR: empresa, WhatsApp, horário 14h]</i></li>
+      <li>🌇 Sky Costanera: ingressos seg 20/07 14h30 — <i>[EDITAR: nº do pedido]</i></li>
+      <li>❄️ Ski Total: reserva 4/10 kits — <a href="tel:+56222245285">📞 ligar Ski Total</a> · <a href="https://www.skitotal.cl" target="_blank">skitotal.cl</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== ABA: DÚVIDAS ===== -->
 <div class="tabview" id="tab-chat">
   <h2 class="tabtitle">Dúvidas 💬</h2>
   <p class="tabsub">Pergunte qualquer coisa sobre a viagem — respondo na hora, até sem internet.</p>
@@ -688,6 +792,7 @@
   <button class="active" id="tb-roteiro" onclick="go('roteiro')"><span class="ic">🗓️</span>Roteiro</button>
   <button id="tb-checklist" onclick="go('checklist')"><span class="ic">✅</span>Checklist</button>
   <button id="tb-guia" onclick="go('guia')"><span class="ic">🚇</span>Guia</button>
+  <button id="tb-planob" onclick="go('planob')"><span class="ic">🌧️</span>Plano B</button>
   <button id="tb-chat" onclick="go('chat')"><span class="ic">💬</span>Dúvidas</button>
 </nav>
 
@@ -705,7 +810,7 @@ function go(t){
 try{
   const boxes=document.querySelectorAll('#tab-checklist input[type="checkbox"]');
   boxes.forEach((b,i)=>{
-    const k='rot-check-'+i;
+    const k='rot2-check-'+i;
     try{ if(localStorage.getItem(k)==='1') b.checked=true; }catch(e){}
     b.addEventListener('change',()=>{ try{localStorage.setItem(k, b.checked?'1':'0');}catch(e){} });
   });
@@ -715,6 +820,18 @@ try{
 function norm(t){return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
 
 const KB=[
+ {k:['emergencia','medico','hospital','clinica','doente','machucou','ambulancia','samu'],
+  a:'🚨 Emergências: SAMU (ambulância) 131 · Carabineros 133 · Bombeiros 132. Clínica mais próxima do hotel: Indisa (Av. Santa María 1810, 7 min de Uber), ou Clínica Alemana (Av. Vitacura 5951). Hotel: +56 2 2638 1042. Todos os números clicáveis estão na aba Plano B!'},
+ {k:['chuva','chover','mau tempo','plano b','chovendo','molhado'],
+  a:'🌧️ Se chover: MIM — Museo Interactivo Mirador (o melhor pra crianças, metrô Linha 5 direto), KidZania (atrás do Parque Arauco), Museu de Arte Pré-Colombiana (centro) ou tarde de shopping. Se nevar forte na estrada de Farellones, a empresa do transfer avisa — dá pra trocar o dia de neve pela quarta. Detalhes na aba Plano B!'},
+ {k:['espanhol','como falar','como pedir','conta em espanhol','frases'],
+  a:'🗣️ As 10 frases salvadoras estão na aba Guia! As mais usadas: \"La cuenta, por favor\" (a conta), \"¿Dónde está el baño?\", \"Sin picante para los niños\" (sem pimenta pras crianças) e \"Somos diez personas\" (mesa pra 10 😄).'},
+ {k:['mala','o que levar','bagagem','empacotar','arrumar mala'],
+  a:'🎒 Checklist da mala está na aba Checklist! Essenciais: camadas térmicas + meias grossas, protetor solar fator alto (neve queima!), remédio de enjoo, óculos de sol pra todos, trocador portátil do bebê, e baixar o mapa offline de Santiago no Google Maps antes de sair.'},
+ {k:['mapa offline','sem sinal','sem internet','gps'],
+  a:'📵 Baixe o mapa offline antes de viajar: Google Maps → buscar \"Santiago\" → tocar no nome da cidade → \"Fazer download\". Em Farellones e na estrada de Pirque o sinal some, mas o GPS continua funcionando com o mapa baixado. Este app também funciona offline!'},
+ {k:['aviso','avisos','mural','novidade','mudou algo'],
+  a:'📣 Os avisos do Hudson aparecem no topo da aba Roteiro (quadro amarelo) — mudanças de horário, confirmação da van, pontos de encontro. Abra o app com internet pra receber os mais recentes!'},
  {k:['van','transfer farellones','que horas sai','recogida','embarque farellones','acordar','madrugada'],
   a:'🚐 A van compartilhada de Farellones passa no hotel entre 5h30 e 6h30 de TERÇA (21/07). O horário exato chega por WhatsApp na segunda à noite, após as 20h. Desçam ao lobby 10 min antes — e peçam breakfast box na recepção na véspera, o café ainda estará fechado!'},
  {k:['hotel','le meridien','onde estamos hospedados','endereco do hotel'],
@@ -782,6 +899,41 @@ function send(){
   setTimeout(()=>push(answer(v),'bot'),350);
 }
 function ask(t){ push(t,'user'); setTimeout(()=>push(answer(t),'bot'),350); }
+
+
+// ===== DESTAQUE DO DIA ATUAL =====
+try{
+  const mapa={'2026-07-19':'d19','2026-07-20':'d20','2026-07-21':'d21','2026-07-22':'d22','2026-07-23':'d23','2026-07-24':'d24'};
+  const hoje=new Date().toLocaleDateString('sv',{timeZone:'America/Santiago'});
+  const alvo=mapa[hoje];
+  if(alvo){
+    const sec=document.getElementById(alvo);
+    sec.classList.add('today');
+    const h2=sec.querySelector('h2');
+    const b=document.createElement('span'); b.className='hoje-badge'; b.textContent='HOJE';
+    h2.appendChild(b);
+    setTimeout(()=>sec.scrollIntoView({behavior:'smooth',block:'start'}),600);
+  }
+}catch(e){}
+
+// ===== AVISOS (Supabase — preencher URL e KEY para ativar) =====
+const SB_URL='';   // ex: https://xxxx.supabase.co
+const SB_KEY='';   // anon public key
+if(SB_URL && SB_KEY){
+  fetch(SB_URL+'/rest/v1/avisos?select=texto,created_at&order=created_at.desc&limit=6',
+    {headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}})
+  .then(r=>r.json()).then(rows=>{
+    if(!rows || !rows.length) return;
+    const box=document.getElementById('avisos'), list=document.getElementById('avisos-list');
+    rows.forEach(r=>{
+      const d=document.createElement('div'); d.className='av';
+      const dt=new Date(r.created_at).toLocaleString('pt-BR',{timeZone:'America/Santiago',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+      d.innerHTML=r.texto.replace(/</g,'&lt;')+'<small>'+dt+'</small>';
+      list.appendChild(d);
+    });
+    box.style.display='block';
+  }).catch(()=>{});
+}
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
