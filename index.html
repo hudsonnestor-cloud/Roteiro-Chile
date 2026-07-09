@@ -106,8 +106,8 @@
   /* ===== APP TABS ===== */
   body{padding-bottom:78px}
   .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;background:#0F1A2E;border-top:1px solid #24344F;padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
-  .tabbar button{flex:1;background:none;border:0;color:#8FA6C4;font-family:'Instrument Sans',sans-serif;font-size:11px;font-weight:600;padding:6px 2px;cursor:pointer;border-radius:12px}
-  .tabbar button .ic{display:block;font-size:20px;margin-bottom:2px}
+  .tabbar button{flex:1;background:none;border:0;color:#8FA6C4;font-family:'Instrument Sans',sans-serif;font-size:10px;font-weight:600;padding:5px 1px;cursor:pointer;border-radius:10px}
+  .tabbar button .ic{display:block;font-size:18px;margin-bottom:2px}
   .tabbar button.active{color:#FFFFFF;background:#22385A}
   .tabview{display:none}
   .tabview.active{display:block}
@@ -145,6 +145,21 @@
   .avisos .av{border-bottom:1px dashed #E8C98F;padding:7px 0;font-size:14.5px}
   .avisos .av small{display:block;color:#A97B26;font-size:11px;margin-top:2px}
   .avisos .av:last-child{border-bottom:0}
+
+
+  /* Guia de restaurantes */
+  .meal{background:var(--snow);border-radius:18px;box-shadow:0 2px 10px rgba(21,34,56,.07);padding:16px 18px;margin:0 0 14px}
+  .meal h3{font-size:15px;color:var(--night)}
+  .meal .when{font-size:12px;color:var(--copper);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .opt{border-left:4px solid var(--line);border-radius:10px;background:#F7FAFD;padding:10px 12px;margin-top:9px}
+  .opt.eco{border-color:#2E8B57}.opt.cb{border-color:#C9803F}.opt.lux{border-color:#7E2A3A}
+  .opt.best{background:#FBF4E7;box-shadow:0 0 0 2px #E8C98F inset}
+  .opt .cat{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+  .opt.eco .cat{color:#2E8B57}.opt.cb .cat{color:#A5661F}.opt.lux .cat{color:#7E2A3A}
+  .opt .cat .star{color:#A5661F}
+  .opt b.nm{font-size:14.5px}
+  .opt p{font-size:13px;margin-top:3px}
+  .opt .meta{font-size:12px;color:var(--muted);margin-top:2px}
 
 </style>
 </head>
@@ -716,6 +731,223 @@
 </div>
 
 
+<!-- ===== ABA: COMER ===== -->
+<div class="tabview" id="tab-comer">
+  <h2 class="tabtitle">Onde comer 🍽️</h2>
+  <p class="tabsub">Refeição a refeição, seguindo o roteiro — sempre com 3 opções: 💰 econômico · ⚖️ custo-benefício · ✨ luxo. Valores médios por adulto, com bebida.</p>
+  <div class="meal">
+    <span class="when">Dom 19 · Jantar 19h30</span>
+    <h3>Lastarria (5 min a pé do hotel)</h3>
+    <p style="font-size:13px;color:var(--muted);margin-top:2px">⚠️ Domingo à noite metade do bairro fecha — estas 3 estão abertas:</p>
+    <div class="opt eco">
+      <span class="cat">💰 Econômico</span><br>
+      <b class="nm">Papachecos</b>
+      <p class="meta">José V. Lastarria 160 · ~CLP 8 mil/pessoa · até 21h</p>
+      <p>Batatas com coberturas — peçam a de frango ao limão com cebola caramelizada. Diferencial: rápido, divertido, as crianças montam a própria combinação.</p>
+    </div>
+    <div class="opt lux best">
+      <span class="cat">✨ Luxo &middot; <span class="star">&#9733; INDICADO</span></span><br>
+      <b class="nm">Casa Lastarria</b>
+      <p class="meta">J.V. Lastarria 70 · ~CLP 20–25 mil · 4.7★ · dom até 22h</p>
+      <p>Peçam o pastel de choclo (o mais famoso da cidade) e as empanaditas de camarão. Diferencial: rooftop charmoso e cozinha chilena impecável — perfeito pra primeira noite.</p>
+    </div>
+    <div class="opt cb">
+      <span class="cat">⚖️ Custo-benefício</span><br>
+      <b class="nm">Sabores del Patio</b>
+      <p class="meta">Patio Bellavista (12 min a pé) · ~CLP 12–14 mil</p>
+      <p>Praça com 3 cozinhas (basca, árabe, japonesa) na mesma mesa — cada um pede de uma. Diferencial: agrada gostos diferentes do grupo de uma vez só.</p>
+    </div>
+
+  </div>
+  <div class="meal">
+    <span class="when">Seg 20 · Almoço 12h30</span>
+    <h3>Mercado Central (após a Plaza de Armas)</h3>
+    <p style="font-size:13px;color:var(--muted);margin-top:2px">O templo dos frutos do mar chilenos — 8 min a pé da praça:</p>
+    <div class="opt eco">
+      <span class="cat">💰 Econômico</span><br>
+      <b class="nm">Donde Blanca</b>
+      <p class="meta">Interior do Mercado, local 943 · menú del día ~CLP 7–9 mil</p>
+      <p>Peçam o menu do dia (sopa + pescado frito). Diferencial: preço de feira, porções generosas, ambiente raiz.</p>
+    </div>
+    <div class="opt cb best">
+      <span class="cat">⚖️ Custo-benefício &middot; <span class="star">&#9733; INDICADO</span></span><br>
+      <b class="nm">Tío Lucho</b>
+      <p class="meta">Interior do Mercado, local 88 · ~CLP 12–15 mil · 4.3★</p>
+      <p>Paila marina (a sopa de mariscos clássica) e pescado frito. Diferencial: pisco sour de cortesia na chegada e clientela local — o mais autêntico do mercado.</p>
+    </div>
+    <div class="opt lux">
+      <span class="cat">✨ Luxo</span><br>
+      <b class="nm">El Galeón</b>
+      <p class="meta">Ismael Valdés Vergara 980 · ~CLP 20–28 mil · 4.7★</p>
+      <p>Ceviche misto e, pra esbanjar, a centolla (caranguejo-rei). Diferencial: fica na lateral externa do mercado — sem o assédio dos garçons de dentro, serviço calmo.</p>
+    </div>
+
+  </div>
+  <div class="meal">
+    <span class="when">Seg 20 · Jantar 19h15</span>
+    <h3>Patio Bellavista</h3>
+    <p style="font-size:13px;color:var(--muted);margin-top:2px">⚠️ Segunda o clássico Galindo fecha — o jantar fica dentro do próprio Patio:</p>
+    <div class="opt eco">
+      <span class="cat">💰 Econômico</span><br>
+      <b class="nm">BKS Backstage Life</b>
+      <p class="meta">Constitución 40 · ~CLP 9–11 mil</p>
+      <p>Burgers, sushi e petiscos de gastropub. Diferencial: ambiente descontraído com música pra fechar o dia.</p>
+    </div>
+    <div class="opt cb best">
+      <span class="cat">⚖️ Custo-benefício &middot; <span class="star">&#9733; INDICADO</span></span><br>
+      <b class="nm">Sabores del Patio</b>
+      <p class="meta">Constitución 50 · ~CLP 12–14 mil · terraço</p>
+      <p>Paella basca + ramen na mesma mesa. Diferencial: terraço com vista pro cerro, mesas grandes — e a volta pro hotel é 12 min a pé: dormir cedo pra van!</p>
+    </div>
+    <div class="opt lux">
+      <span class="cat">✨ Luxo</span><br>
+      <b class="nm">Peumayén Ancestral Food</b>
+      <p class="meta">Constitución 136 · ~CLP 30–35 mil · 4.5★</p>
+      <p>Menu degustação de cozinha ancestral chilena (mapuche, rapa nui). Diferencial: experiência gastronômica única no país — jantar longo, melhor pros adultos.</p>
+    </div>
+
+  </div>
+  <div class="meal">
+    <span class="when">Ter 21 · Almoço 12h30</span>
+    <h3>Parque Farellones (na montanha)</h3>
+    <p style="font-size:13px;color:var(--muted);margin-top:2px">Aqui não tem 3 opções — é o restaurante do parque mesmo 😄 Estratégia:</p>
+    <div class="opt cb best">
+      <span class="cat">⚖️ Único no local &middot; <span class="star">&#9733; INDICADO</span></span><br>
+      <b class="nm">Restaurante do parque</b>
+      <p class="meta">Self-service · ~CLP 12–15 mil/adulto</p>
+      <p>Pratos quentes simples (cazuela, sanduíches, pizza). Diferencial: vista da cordilheira. Almocem 12h15 — depois das 13h a fila fica longa.</p>
+    </div>
+    <div class="opt eco">
+      <span class="cat">💰 Economia esperta</span><br>
+      <b class="nm">Lanches de mochila</b>
+      <p class="meta">Comprados no domingo no supermercado</p>
+      <p>Sanduíches, frutas, chocolate e água cortam o gasto pela metade. Diferencial: as crianças beliscam o dia todo sem depender de fila.</p>
+    </div>
+<div class="tip" style="margin-top:9px"><b class="title">Dica</b>Chocolate quente na cafeteria no meio da tarde (~CLP 3 mil) é o combustível oficial do dia de neve ☕</div>
+  </div>
+  <div class="meal">
+    <span class="when">Ter 21 · Jantar 19h45</span>
+    <h3>Perto do hotel (todos exaustos)</h3>
+    <p style="font-size:13px;color:var(--muted);margin-top:2px">Volta às 18h30 de Farellones — jantar sem esforço:</p>
+    <div class="opt eco best">
+      <span class="cat">💰 Econômico &middot; <span class="star">&#9733; INDICADO</span></span><br>
+      <b class="nm">Cantabrico</b>
+      <p class="meta">Alameda 287 · ~CLP 7–9 mil · 2 min a pé!</p>
+      <p>Lomito completo ou churrasco italiano. Diferencial: o mais perto de TODOS — na quadra do hotel, porções grandes, preço honesto.</p>
+    </div>
+    <div class="opt cb">
+      <span class="cat">⚖️ Custo-benefício</span><br>
+      <b class="nm">Peztoro</b>
+      <p class="meta">J.V. Lastarria 70 · ~CLP 12–14 mil</p>
+      <p>Pizzas e massas de porção generosa. Diferencial: serviço rápido — crianças cansadas comem e vão direto dormir.</p>
+    </div>
+    <div class="opt lux">
+      <span class="cat">✨ Luxo</span><br>
+      <b class="nm">Oda Santiago</b>
+      <p class="meta">J.V. Lastarria 138 · ~CLP 20–25 mil · 4.7★</p>
+      <p>Ceviche de robalo e almejas ao parmesão. Diferencial: a melhor cozinha chilena contemporânea do bairro, se sobrar energia.</p>
+    </div>
+
+  </div>
+  <div class="meal">
+    <span class="when">Qua 22 · Almoço 12h30</span>
+    <h3>Vitacura (saindo do Parque Bicentenario)</h3>
+    <p style="font-size:13px;color:var(--muted);margin-top:2px">O bairro mais sofisticado — o almoço estrela do roteiro:</p>
+    <div class="opt eco">
+      <span class="cat">💰 Econômico</span><br>
+      <b class="nm">Cafés da Casa Costanera</b>
+      <p class="meta">Nueva Costanera 3900 (em frente ao parque) · ~CLP 7–10 mil</p>
+      <p>Sanduíches e saladas em centro gastronômico charmoso. Diferencial: rápido e a 5 min do parque — sobra mais tempo de compras.</p>
+    </div>
+    <div class="opt cb">
+      <span class="cat">⚖️ Custo-benefício</span><br>
+      <b class="nm">Arca Bar</b>
+      <p class="meta">Nueva Costanera 3986 · ~CLP 14–18 mil · 4.7★</p>
+      <p>Entraña (fraldinha) e malaya de porco — porções grandes pra dividir. Diferencial: comida ótima sem o preço típico de Vitacura.</p>
+    </div>
+    <div class="opt lux best">
+      <span class="cat">✨ Luxo &middot; <span class="star">&#9733; INDICADO</span></span><br>
+      <b class="nm">Mestizo</b>
+      <p class="meta">Av. Bicentenario 4050, dentro do parque · ~CLP 25–35 mil · reservar!</p>
+      <p>Ostras, ceviche e mero grelhado. Diferencial: um dos restaurantes mais bonitos do Chile — vidraças pro lago com a Cordilheira ao fundo. Vale cada peso.</p>
+    </div>
+
+  </div>
+  <div class="meal">
+    <span class="when">Qua 22 · Jantar 18h45</span>
+    <h3>Boulevard do Parque Arauco</h3>
+    <p style="font-size:13px;color:var(--muted);margin-top:2px">Jantar resolvido no próprio shopping, a céu aberto (aquecido):</p>
+    <div class="opt eco">
+      <span class="cat">💰 Econômico</span><br>
+      <b class="nm">Praça de alimentação</b>
+      <p class="meta">Piso 2 do shopping · ~CLP 7–9 mil</p>
+      <p>Redes conhecidas + opções chilenas. Diferencial: cada criança escolhe o seu, zero negociação 😄</p>
+    </div>
+    <div class="opt cb best">
+      <span class="cat">⚖️ Custo-benefício &middot; <span class="star">&#9733; INDICADO</span></span><br>
+      <b class="nm">Trattoria Rita</b>
+      <p class="meta">Boulevard, local 369 · ~CLP 15 mil · 4.6★</p>
+      <p>Pizza napolitana de massa fresca e pastas artesanais. Diferencial: a melhor avaliação do Boulevard — italiano de verdade, mesas grandes.</p>
+    </div>
+    <div class="opt lux">
+      <span class="cat">✨ Luxo</span><br>
+      <b class="nm">Nelí</b>
+      <p class="meta">Boulevard, local 363 · ~CLP 22–28 mil</p>
+      <p>Empanadas de ossobuco e pescados. Diferencial: o ambiente mais bonito do Boulevard, com música ao vivo em algumas noites.</p>
+    </div>
+
+  </div>
+  <div class="meal">
+    <span class="when">Qui 23 · Almoço 12h00</span>
+    <h3>El Golf / Isidora Goyenechea (descendo do teleférico)</h3>
+    <p style="font-size:13px;color:var(--muted);margin-top:2px">A pequena Manhattan de Santiago — de olho no transfer das 14h:</p>
+    <div class="opt eco">
+      <span class="cat">💰 Econômico</span><br>
+      <b class="nm">Waldo&#39;s Bistró</b>
+      <p class="meta">Isidora Goyenechea 2800 · ~CLP 8–10 mil · 5.0★</p>
+      <p>Menu executivo do dia. Diferencial: comida boa, rápida e barata no bairro mais caro — avaliação perfeita no Google.</p>
+    </div>
+    <div class="opt cb best">
+      <span class="cat">⚖️ Custo-benefício &middot; <span class="star">&#9733; INDICADO</span></span><br>
+      <b class="nm">Pizzería Tiramisú</b>
+      <p class="meta">Isidora Goyenechea 3141 · ~CLP 14–18 mil · reservar!</p>
+      <p>As pizzas finas mais famosas de Santiago (peçam a de rúcula e a de camarão) + o tiramisù da casa. Diferencial: clássico absoluto da cidade, ótimo pra grupos com crianças.</p>
+    </div>
+    <div class="opt lux">
+      <span class="cat">✨ Luxo</span><br>
+      <b class="nm">Tanta</b>
+      <p class="meta">Isidora Goyenechea 3000 · ~CLP 20–25 mil · 4.7★</p>
+      <p>Lomo saltado e ceviche do império Gastón Acurio. Diferencial: alta cozinha peruana com porções fartas — mas atenção ao relógio!</p>
+    </div>
+
+  </div>
+  <div class="meal">
+    <span class="when">Qui 23 · Jantar 20h00</span>
+    <h3>Despedida em Providencia 🎁 (jantar de presente!)</h3>
+    <p style="font-size:13px;color:var(--muted);margin-top:2px">Já ganho — só escolher e <b>reservar mesa pra 10</b>:</p>
+    <div class="opt lux best">
+      <span class="cat">✨ Opção 1 &middot; <span class="star">&#9733; INDICADO</span></span><br>
+      <b class="nm">Baco</b>
+      <p class="meta">Nueva de Lyon 113 (metrô Los Leones) · ~CLP 22–28 mil</p>
+      <p>Bistrô franco-chileno: magret de pato, ravioli e a melhor carta de vinhos em taça da cidade. Diferencial: elegante sem ser formal — despedida à altura da viagem.</p>
+    </div>
+    <div class="opt cb">
+      <span class="cat">⚖️ Opção 2</span><br>
+      <b class="nm">Liguria</b>
+      <p class="meta">Av. Providencia 1373 (metrô Manuel Montt) · ~CLP 16–20 mil</p>
+      <p>Mechada (carne desfiada), sanduíches históricos e pisco sour. Diferencial: o boteco-bistrô mais icônico e animado de Santiago — despedida com alma chilena.</p>
+    </div>
+
+  </div>
+  <h2 class="tabtitle" style="font-size:20px;margin-top:22px">Perto do hotel (2–8 min a pé) 🏨</h2>
+  <p class="tabsub">Pra qualquer refeição fora do plano. ⚠️ = fecha domingo.</p>
+  <div class="cardlist">
+    <p><b style="color:#2E8B57">💰 ECONÔMICOS</b> (~CLP 5–9 mil): <b>Cantabrico</b> (Alameda 287, chileno raiz ⚠️) · <b>Papachecos</b> (batatas — hit com crianças) · <b>New Horizon</b> (indiano, Merced 565 ⚠️) · <b>Thai Express</b> (Merced 483)</p>
+    <p style="margin-top:8px"><b style="color:#A5661F">⚖️ CUSTO-BENEFÍCIO</b> (~CLP 10–16 mil): <b>Peztoro</b> (pizza/massas) · <b>Donde Guido</b> (peruano, porções enormes) · <b>Castillo Forestal</b> (castelinho no parque — crianças amam) · <b>Chipe Libre</b> (pisco + chilena ⚠️)</p>
+    <p style="margin-top:8px"><b style="color:#7E2A3A">✨ LUXO</b> (~CLP 18–30 mil): <b>Casa Lastarria</b> (pastel de choclo, rooftop) · <b>Bocanáriz</b> (wine bar premiado) · <b>Le Bistrot Lastarria</b> (francês 4.8★) · <b>Oda</b> (chilena contemporânea, fecha 2ª)</p>
+  </div>
+</div>
+
 <!-- ===== ABA: PLANO B ===== -->
 <div class="tabview" id="tab-planob">
   <h2 class="tabtitle">Plano B 🌧️</h2>
@@ -792,6 +1024,7 @@
   <button class="active" id="tb-roteiro" onclick="go('roteiro')"><span class="ic">🗓️</span>Roteiro</button>
   <button id="tb-checklist" onclick="go('checklist')"><span class="ic">✅</span>Checklist</button>
   <button id="tb-guia" onclick="go('guia')"><span class="ic">🚇</span>Guia</button>
+  <button id="tb-comer" onclick="go('comer')"><span class="ic">🍽️</span>Comer</button>
   <button id="tb-planob" onclick="go('planob')"><span class="ic">🌧️</span>Plano B</button>
   <button id="tb-chat" onclick="go('chat')"><span class="ic">💬</span>Dúvidas</button>
 </nav>
@@ -865,7 +1098,7 @@ const KB=[
  {k:['aeroporto','voo','transvip','desembarque','scl'],
   a:'✈️ Aeroporto SCL ↔ hotel: ~30–40 min sem trânsito. Na chegada: van oficial Transvip/Delfos no desembarque (van exclusiva ~CLP 45–60 mil) ou 2 Ubers XL no estacionamento E3. Na volta (sexta): sair 3h30 antes do voo internacional — reservar a van na recepção na quinta.'},
  {k:['restaurante','jantar','reserva','comer','almoco','onde comer','baco','liguria'],
-  a:'🍽️ Reservas pra mesa de 10: DOM jantar em Lastarria · SEG jantar Patio Bellavista · QUA almoço no Mestizo (vista do Bicentenario) e jantar no Boulevard do Arauco · QUI almoço Pizzería Tiramisú e jantar de despedida no Baco ou Liguria. Detalhes e endereços na aba Roteiro!'},
+  a:'🍽️ Reservas pra mesa de 10: DOM jantar em Lastarria · SEG jantar Patio Bellavista · QUA almoço no Mestizo (vista do Bicentenario) e jantar no Boulevard do Arauco · QUI almoço Pizzería Tiramisú e jantar de despedida no Baco ou Liguria. E o guia completo — com opção econômica, custo-benefício e luxo pra CADA refeição — está na aba Comer 🍽️!'},
  {k:['sky','costanera','ingresso sky','horario sky','mirante'],
   a:'🌇 Sky Costanera: mirante a 300 m no Costanera Center (metrô Tobalaba). Vamos SEGUNDA às 14h30 — Cordilheira nevada em plena luz. Aberto 10h–22h; 0–4 anos grátis, 5–12 tarifa reduzida. Comprar antes com hora marcada em skycostanera.cl!'},
  {k:['concha y toro','tour vinho','degustacao','pirque','casillero','vinicola','vinho'],

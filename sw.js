@@ -1,6 +1,6 @@
 // Service worker: network-first (sempre busca a versao mais nova quando ha internet;
 // se estiver offline - Farellones, estrada de Pirque - serve a ultima versao em cache)
-const CACHE = 'roteiro-santiago-v3';
+const CACHE = 'roteiro-santiago-v4';
 const ASSETS = ['./index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
