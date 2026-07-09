@@ -1,0 +1,14 @@
+{
+  "name": "Roteiro Santiago - Familia",
+  "short_name": "Santiago",
+  "description": "Roteiro da viagem em familia a Santiago do Chile, 19 a 24 de julho",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#152238",
+  "theme_color": "#152238",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

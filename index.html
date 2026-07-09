@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roteiro Santiago · 19 a 24 de Julho</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#152238">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Santiago">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#152238;      /* azul noite andino */
+    --ice:#EAF1F8;        /* gelo */
+    --snow:#FFFFFF;
+    --wine:#7E2A3A;       /* vinho Concha y Toro */
+    --copper:#C9803F;     /* cobre chileno */
+    --ink:#22304A;
+    --muted:#5B6B85;
+    --line:#D7E2EE;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Instrument Sans',system-ui,sans-serif;background:var(--ice);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--wine);text-decoration:none;font-weight:600}
+  a:focus-visible{outline:3px solid var(--copper);outline-offset:2px;border-radius:4px}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,#0E1930 0%,#1C3050 55%,#2E4A6E 100%);color:var(--snow);padding:44px 22px 0;position:relative;overflow:hidden}
+  .hero .kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#9FB8D8;font-weight:600}
+  .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(34px,9vw,56px);line-height:1.02;margin:10px 0 8px}
+  .hero .dates{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(17px,4.5vw,22px);color:#E8C98F;font-weight:600}
+  .hero .facts{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 26px}
+  .hero .facts span{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 13px;font-size:13.5px}
+  .ridge{display:block;width:100%;height:56px}
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 16px 60px}
+
+  /* NAV DIAS */
+  .daynav{position:sticky;top:0;z-index:20;background:var(--ice);padding:10px 0;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .daynav a{flex:0 0 auto;background:var(--snow);border:1.5px solid var(--line);color:var(--ink);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:600;white-space:nowrap}
+  .daynav a b{color:var(--wine)}
+
+  /* CARTÕES DE DIA */
+  .day{background:var(--snow);border-radius:18px;margin:18px 0;box-shadow:0 2px 10px rgba(21,34,56,.07);overflow:hidden;scroll-margin-top:64px}
+  .dayhead{padding:20px 20px 14px;background:linear-gradient(135deg,var(--night),#28405F);color:var(--snow)}
+  .dayhead .dnum{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#E8C98F;font-weight:700}
+  .dayhead h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(21px,5.6vw,27px);margin-top:4px;line-height:1.15}
+  .day.wine .dayhead{background:linear-gradient(135deg,#4A1620,var(--wine))}
+  .day.snowday .dayhead{background:linear-gradient(135deg,#20344F,#4A6B94)}
+  .daybody{padding:6px 18px 20px}
+
+  /* TIMELINE */
+  .stop{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:16px 0;border-bottom:1px dashed var(--line)}
+  .stop:last-child{border-bottom:0}
+  .time{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;color:var(--wine);padding-top:2px}
+  .time small{display:block;font-family:'Instrument Sans';font-weight:600;color:var(--muted);font-size:11px;line-height:1.3;margin-top:2px}
+  .stop h3{font-size:16.5px;font-weight:700;margin-bottom:2px}
+  .addr{font-size:13.5px;color:var(--muted);margin-bottom:6px}
+  .addr a{font-size:13.5px}
+  .stop p, .stop li{font-size:14.5px}
+  .stop ul{padding-left:18px;margin:4px 0}
+
+  /* CAIXA COMO CHEGAR */
+  .go{background:var(--ice);border-left:4px solid var(--copper);border-radius:10px;padding:10px 12px;margin-top:8px;font-size:13.8px}
+  .go b.title{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--copper);margin-bottom:4px}
+  .go div{margin:3px 0}
+  .tip{background:#FBF4E7;border-left:4px solid #E8C98F;border-radius:10px;padding:10px 12px;margin-top:8px;font-size:13.8px}
+  .tip b.title{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#A97B26;margin-bottom:4px}
+  .booked{display:inline-block;background:#E7F5EC;color:#1E7A45;border-radius:999px;font-size:12px;font-weight:700;padding:3px 10px;margin-left:6px;vertical-align:middle}
+
+  /* CHECKLIST */
+  .checklist{list-style:none;padding-left:0 !important}
+  .checklist li{margin:9px 0;font-size:14.5px}
+  .checklist label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+  .checklist input[type="checkbox"]{flex:0 0 auto;width:19px;height:19px;margin-top:2px;accent-color:#2E6B52}
+  .checklist label:has(input:checked){opacity:.55;text-decoration:line-through}
+
+  /* GUIA TRANSPORTE */
+  .guide{background:var(--night);color:#DCE7F4;border-radius:18px;margin:18px 0;padding:22px 20px}
+  .guide h2{font-family:'Bricolage Grotesque',sans-serif;color:var(--snow);font-size:22px;margin-bottom:12px}
+  .guide h3{color:#E8C98F;font-size:15px;margin:14px 0 4px}
+  .guide p,.guide li{font-size:14px}
+  .guide ul{padding-left:18px}
+  .guide a{color:#F0C879}
+
+  .foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:26px}
+  .printbtn{position:fixed;right:14px;bottom:14px;background:var(--wine);color:#fff;border:0;border-radius:999px;padding:12px 18px;font-family:'Instrument Sans';font-weight:700;font-size:14px;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer;z-index:30}
+
+  @media print{
+    .printbtn,.daynav{display:none}
+    body{background:#fff}
+    .day{box-shadow:none;border:1px solid #ccc;break-inside:avoid}
+    .hero{padding-top:24px}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .day{animation:up .5s ease both}
+    @keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  }
+
+  /* ===== APP TABS ===== */
+  body{padding-bottom:78px}
+  .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;background:#0F1A2E;border-top:1px solid #24344F;padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+  .tabbar button{flex:1;background:none;border:0;color:#8FA6C4;font-family:'Instrument Sans',sans-serif;font-size:11px;font-weight:600;padding:6px 2px;cursor:pointer;border-radius:12px}
+  .tabbar button .ic{display:block;font-size:20px;margin-bottom:2px}
+  .tabbar button.active{color:#FFFFFF;background:#22385A}
+  .tabview{display:none}
+  .tabview.active{display:block}
+  .tabtitle{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;color:var(--night);margin:18px 2px 4px}
+  .tabsub{color:var(--muted);font-size:14px;margin:0 2px 14px}
+
+  /* ===== CHAT ===== */
+  .chatbox{background:var(--snow);border-radius:18px;box-shadow:0 2px 10px rgba(21,34,56,.07);padding:14px;margin-bottom:14px}
+  .msgs{display:flex;flex-direction:column;gap:10px;min-height:220px;max-height:52vh;overflow-y:auto;padding:4px 2px}
+  .msg{max-width:86%;padding:10px 13px;border-radius:16px;font-size:14.5px;line-height:1.5;white-space:pre-wrap}
+  .msg.user{align-self:flex-end;background:var(--night);color:#fff;border-bottom-right-radius:4px}
+  .msg.bot{align-self:flex-start;background:var(--ice);color:var(--ink);border-bottom-left-radius:4px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 6px}
+  .chips button{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:7px 12px;font-size:12.5px;font-weight:600;color:var(--ink);cursor:pointer;font-family:'Instrument Sans',sans-serif}
+  .inputrow{display:flex;gap:8px;margin-top:8px}
+  .inputrow input{flex:1;border:1.5px solid var(--line);border-radius:999px;padding:11px 15px;font-size:15px;font-family:'Instrument Sans',sans-serif;outline:none}
+  .inputrow input:focus{border-color:var(--copper)}
+  .inputrow button{background:var(--wine);color:#fff;border:0;border-radius:999px;padding:0 18px;font-weight:700;font-size:15px;cursor:pointer;font-family:'Instrument Sans',sans-serif}
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="kicker">Roteiro em família · Chile</p>
+  <h1>Santiago &amp; Cordilheira ❄️🍷</h1>
+  <p class="dates">19 a 24 de julho · 6 adultos · 3 crianças · 1 bebê</p>
+  <div class="facts">
+    <span>🏨 Le Méridien Santiago</span>
+    <span>📍 Alameda 136 — ao lado do GAM</span>
+    <span>🚇 Metrôs U. Católica e Baquedano (3–5 min a pé)</span>
+    <span>🌡️ Inverno: 0 a 15 °C · escurece ~18h</span>
+  </div>
+  <svg class="ridge" viewBox="0 0 800 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0,56 L60,30 L120,44 L200,12 L280,40 L360,6 L440,36 L520,16 L600,42 L680,22 L800,48 L800,56 Z" fill="#EAF1F8"/></svg>
+</header>
+
+<main class="wrap">
+
+<!-- ===== ABA 1: ROTEIRO ===== -->
+<div class="tabview active" id="tab-roteiro">
+<nav class="daynav" aria-label="Dias">
+  <a href="#d19"><b>Dom 19</b> Chegada</a>
+  <a href="#d20"><b>Seg 20</b> Centro + Sky</a>
+  <a href="#d21"><b>Ter 21</b> Farellones</a>
+  <a href="#d22"><b>Qua 22</b> Parques + Compras</a>
+  <a href="#d23"><b>Qui 23</b> Cerro + Vinícola</a>
+  <a href="#d24"><b>Sex 24</b> Volta</a>
+</nav>
+<section class="day" id="d19">
+  <div class="dayhead">
+    <span class="dnum">Domingo · 19/07</span>
+    <h2>Chegada e primeiro contato com Santiago</h2>
+  </div>
+  <div class="daybody">
+
+    <div class="stop">
+      <div class="time">14h00<small>→ 16h00</small></div>
+      <div>
+        <h3>Aeroporto SCL → Hotel + check-in</h3>
+        <p class="addr">Le Méridien Santiago · <a href="https://maps.google.com/?q=Le+Meridien+Santiago,+Av.+Libertador+Bernardo+O'Higgins+136" target="_blank">Av. Libertador Bernardo O'Higgins 136 📍</a></p>
+        <p>Check-in oficial 15h. Chegando antes, deixem as malas na recepção. Descanso pós-voo.</p>
+        <div class="go"><b class="title">Como chegar (≈ 19 km · 30–40 min)</b>
+          <div>🚐 <b>Van oficial (recomendado p/ 10):</b> Transvip ou Delfos, balcões no desembarque — van exclusiva ~CLP 45–60 mil.</div>
+          <div>🚗 <b>Uber/Cabify:</b> 2 carros XL (até 5–6 passageiros cada), ~CLP 20–28 mil por carro. Ponto de embarque no estacionamento E3.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">17h00</div>
+      <div>
+        <h3>Passeio pelo Barrio Lastarria</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Barrio+Lastarria,+Santiago" target="_blank">Rua José Victorino Lastarria 📍</a></p>
+        <ul>
+          <li>Ruas históricas, feirinha de artesanato e livros</li>
+          <li>Café + sorvete para as crianças no <b>Emporio La Rosa</b> (Merced 291) — eleito um dos melhores do mundo</li>
+        </ul>
+        <div class="go"><b class="title">Como chegar</b>
+          <div>🚶 <b>A pé: 5 min</b> — o bairro fica logo atrás do GAM, colado no hotel. Não precisa de transporte.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">19h30</div>
+      <div>
+        <h3>Jantar em Lastarria</h3>
+        <p>Boas opções para grupo grande: <b>Chipe Libre</b> (pisco &amp; comida chilena), <b>Casa Lastarria</b> ou <b>Bocanáriz</b> (vinhos). Reservem com antecedência — o bairro é movimentado à noite.</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">21h30</div>
+      <div><h3>Retorno ao hotel</h3><p>🚶 5 min a pé, rua movimentada e iluminada.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="day" id="d20">
+  <div class="dayhead">
+    <span class="dnum">Segunda-feira · 20/07</span>
+    <h2>Centro histórico + Sky Costanera + aluguel das roupas</h2>
+  </div>
+  <div class="daybody">
+
+    <div class="stop">
+      <div class="time">08h00</div>
+      <div><h3>Café da manhã no hotel</h3></div>
+    </div>
+
+    <div class="stop">
+      <div class="time">09h30</div>
+      <div>
+        <h3>Plaza de Armas + Catedral Metropolitana</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Plaza+de+Armas,+Santiago" target="_blank">Plaza de Armas, Centro Histórico 📍</a></p>
+        <ul><li>Catedral, Correio Central, Museu Histórico Nacional (fachadas)</li><li>Artistas de rua e pintores na praça</li></ul>
+        <div class="go"><b class="title">Como chegar (do hotel)</b>
+          <div>🚇 <b>Metrô: Baquedano → Plaza de Armas (Linha 5 direto, 4 estações, ~10 min)</b>.</div>
+          <div>🚗 Uber: 10 min, ~CLP 4–5 mil por carro.</div>
+        </div>
+        <div class="tip"><b class="title">Segunda-feira no centro</b>Vários museus fecham às segundas, mas o passeio aqui é a rua: praça, catedral, calçadão Paseo Ahumada — tudo aberto e mais vazio que no fim de semana.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">12h30</div>
+      <div>
+        <h3>Almoço no centro</h3>
+        <p>Sugestão: <b>Mercado Central</b> (frutos do mar, 8 min a pé da praça) ou os clássicos ao redor da própria Plaza de Armas.</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">13h50<small>→ 14h25</small></div>
+      <div>
+        <h3>Deslocamento para o Sky Costanera</h3>
+        <div class="go"><b class="title">Como chegar (do centro)</b>
+          <div>🚇 <b>Metrô: Plaza de Armas (L5) → Baquedano → Tobalaba (L1)</b>, ~20 min — o prédio fica em cima da estação.</div>
+          <div>🚗 Uber: 15 min, ~CLP 5–7 mil por carro.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">14h30<small>→ 15h45</small></div>
+      <div>
+        <h3>Sky Costanera — mirante a 300 m 🌇</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Sky+Costanera,+Av.+Andres+Bello+2425,+Providencia" target="_blank">Av. Andrés Bello 2425 (Costanera Center) 📍</a></p>
+        <ul>
+          <li>Aberto todos os dias 10h–22h · <b>bebês de 0–4 anos não pagam</b>; crianças de 5–12 têm tarifa reduzida</li>
+          <li>No começo da tarde de inverno a <b>Cordilheira nevada aparece em plena luz</b> — visual incrível para fotos em 360°</li>
+        </ul>
+        <div class="tip"><b class="title">Comprar antes + checar o céu</b>Ingressos com horário marcado (14h30) em <a href="https://www.skycostanera.cl" target="_blank">skycostanera.cl</a> — evita fila para grupo de 10. No dia, confiram se está limpo; se amanhecer fechado, dá para reagendar mentalmente: o mirante fica aberto até 22h.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">16h15<small>~1h30</small></div>
+      <div>
+        <h3>Aluguel das roupas de neve (na cidade = mais barato 💰)</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Ski+Total,+Av.+Apoquindo+4900,+Las+Condes" target="_blank">Ski Total · Av. Apoquindo 4900, Las Condes 📍</a></p>
+        <ul>
+          <li>Casaco + calça impermeáveis, luvas, botas, gorro (óculos opcional)</li>
+          <li>Kit completo: ~CLP 15–25 mil por pessoa/dia — alugando na véspera na cidade vocês fogem dos preços turísticos das lojas do caminho</li>
+        </ul>
+        <div class="go"><b class="title">Como chegar (do Sky)</b>
+          <div>🚇 <b>Metrô: Tobalaba → Escuela Militar (Linha 1, 3 estações, ~7 min)</b>, loja a 3 min da estação.</div>
+          <div>🚗 Uber: 10 min, ~CLP 4–5 mil por carro.</div>
+        </div>
+        <div class="tip"><b class="title">Importante</b>Liguem antes: reservem os tamanhos dos 10 kits (a retirada vira só uma prova rápida) e confirmem o horário-limite de <b>devolução</b> — o plano é devolver quarta ~10h, já que terça vocês voltam tarde de Farellones.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">18h00<small>→ 18h30</small></div>
+      <div>
+        <h3>Uber direto para o hotel com as sacolas</h3>
+        <div class="go"><b class="title">Como voltar</b><div>🚗 <b>2 Ubers XL, 20 min</b>, ~CLP 8–10 mil por carro — as 10 sacolas vão no porta-malas, ninguém carrega nada no metrô.</div></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">19h15</div>
+      <div>
+        <h3>Jantar no Patio Bellavista</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Patio+Bellavista,+Constitucion+30,+Providencia" target="_blank">Constitución 30, Bellavista 📍</a> · 🚶 12 min a pé do hotel ou Uber 5 min</p>
+        <p>Pátio gastronômico coberto, perfeito para grupo grande. <b>Voltem até 21h30</b>: amanhã a van do transfer passa entre 5h30 e 6h30! Antes de dormir: pedir breakfast box na recepção, conferir o WhatsApp com o horário de recogida (chega após as 20h) e separar as roupas de neve por pessoa. 😴</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="day snowday" id="d21">
+  <div class="dayhead">
+    <span class="dnum">Terça-feira · 21/07</span>
+    <h2>Dia de neve em Farellones ❄️ <span class="booked">✓ Transfer fechado</span></h2>
+  </div>
+  <div class="daybody">
+
+    <div class="stop">
+      <div class="time">05h15</div>
+      <div>
+        <h3>Despertar + café reforçado</h3>
+        <p>O café do hotel ainda estará fechado: <b>peçam breakfast box na recepção na noite anterior</b> (ou deixem comprado na segunda: pão, frutas, iogurte, café solúvel). Vistam as crianças já com a primeira camada de roupa de frio.</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">05h30<small>→ 06h30</small></div>
+      <div>
+        <h3>Embarque na van compartilhada</h3>
+        <div class="tip"><b class="title">Como funciona o horário</b>
+          A empresa <b>confirma o horário exato na noite anterior, a partir das 20h</b> — fiquem de olho no WhatsApp na segunda à noite. Como o Le Méridien fica na Alameda (início do eixo de recogida da Linha 1), vocês tendem a ser dos <b>primeiros</b> a embarcar: algo entre 5h30 e 6h30. Desçam ao lobby 10 min antes com tudo pronto — a van não espera muito.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">~07h30<small>~1h</small></div>
+      <div>
+        <h3>Parada na loja de roupas (km 4 da subida)</h3>
+        <p>A van para para os outros passageiros alugarem roupa. <b>Vocês já estarão equipados</b> (aluguel de segunda na Ski Total 💰) — aproveitem a parada para café quente, banheiro e trocar as crianças se precisar. Costuma haver cafeteria no local.</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">09h00<small>→ 09h30</small></div>
+      <div>
+        <h3>Chegada ao Parque Farellones</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Parques+de+Farellones" target="_blank">Camino a Farellones, Lo Barnechea · 36 km · 2.430 m de altitude 📍</a></p>
+        <div class="tip"><b class="title">Muito importante</b>
+          São <b>~40 curvas fechadas</b> na subida final. Quem enjoa: remédio 30 min antes de sair do hotel, principalmente para as crianças. Passaporte na mochila, protetor solar (o sol na neve queima rápido) e as roupas de neve já vestidas ou à mão na van.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">09h30<small>→ 16h00</small></div>
+      <div>
+        <h3>Atividades no parque</h3>
+        <ul>
+          <li>Tubing, trenó e brincadeiras na neve (crianças a partir de ~3 anos aproveitam bem)</li>
+          <li>Teleférico/telesilla com vista da Cordilheira</li>
+          <li>Almoço 12h30 no restaurante do parque — levem também lanches e água, na montanha tudo é mais caro</li>
+        </ul>
+        <div class="tip"><b class="title">Com o bebê de 2 anos</b>Há área tranquila perto da cafeteria para revezar. Trocas de fralda: levar trocador portátil. Altitude pode dar sono/irritação — hidratação sempre.</div>
+        <div class="tip"><b class="title">Combine o retorno</b>Ao descer da van, <b>confirmem com o motorista o horário e o ponto exato de encontro</b> para a volta (geralmente 16h–16h30). Salvem o WhatsApp dele.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">16h00<small>→ 18h30</small></div>
+      <div><h3>Descida para Santiago</h3><p>No caminho, a van faz uma <b>parada de ~30 min na loja</b> para os outros passageiros devolverem equipamentos (as roupas de vocês serão devolvidas na Ski Total, quarta de manhã). Chegada ao hotel por volta das 18h30.</p></div>
+    </div>
+
+    <div class="stop">
+      <div class="time">19h45</div>
+      <div><h3>Jantar leve perto do hotel + descanso</h3><p>Dia longo e merecido — amanhã (quarta) começa tranquilo, sem pressa. 😴</p></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="day" id="d22">
+  <div class="dayhead">
+    <span class="dnum">Quarta-feira · 22/07</span>
+    <h2>Devolução das roupas + Bicentenario + Parque Arauco 🛍️</h2>
+  </div>
+  <div class="daybody">
+
+    <div class="stop">
+      <div class="time">09h45<small>→ 10h30</small></div>
+      <div>
+        <h3>Devolução das roupas de neve — Ski Total</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Ski+Total,+Av.+Apoquindo+4900,+Las+Condes" target="_blank">Av. Apoquindo 4900, Las Condes 📍</a> · loja abre ~10h (confirmem na retirada)</p>
+        <div class="go"><b class="title">Como chegar</b>
+          <div>🚇 <b>Metrô: U. Católica → Escuela Militar (Linha 1, ~20 min)</b>, loja a 3 min da estação.</div>
+          <div>🚗 Uber: 15–20 min, ~CLP 7–9 mil por carro (mais fácil com 10 sacolas de roupa!).</div>
+        </div>
+        <div class="tip"><b class="title">Dica</b>Confiram tudo antes de sair do hotel (10 kits: casacos, calças, botas, luvas) — item esquecido = garantia retida.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">10h45<small>→ 12h15</small></div>
+      <div>
+        <h3>Parque Bicentenario</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Parque+Bicentenario,+Av.+Bicentenario+3236,+Vitacura" target="_blank">Av. Bicentenario 3236, Vitacura 📍</a> · grátis</p>
+        <ul><li>Flamingos e lagos com peixes 🦩</li><li>Playground excelente para as crianças gastarem energia</li><li>Caminhada plana com vista da Cordilheira — no fim da manhã já está mais quentinho</li></ul>
+        <div class="go"><b class="title">Como chegar (da Ski Total)</b>
+          <div>🚗 <b>Uber: 10 min</b>, ~CLP 4–5 mil por carro. Não há metrô em Vitacura.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">12h30<small>→ 14h00</small></div>
+      <div>
+        <h3>Almoço no Mestizo</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Mestizo+Restaurant,+Av.+Bicentenario+4050,+Vitacura" target="_blank">Av. Bicentenario 4050 — dentro do Parque Bicentenario 📍</a></p>
+        <p>Um dos restaurantes mais bonitos de Santiago: cozinha chilena contemporânea com vista para o lago e a Cordilheira. 🚶 Fica na ponta do próprio parque — <b>reservem mesa para 10</b>.</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">14h15<small>→ 18h30</small></div>
+      <div>
+        <h3>Parque Arauco — o shopping mais chique de Santiago</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Parque+Arauco,+Av.+Presidente+Kennedy+5413,+Las+Condes" target="_blank">Av. Presidente Kennedy 5413, Las Condes 📍</a> · lojas até 21h</p>
+        <ul>
+          <li><b>Distrito de Lujo</b>: Louis Vuitton, Gucci, Dolce &amp; Gabbana — vitrines lindas mesmo só para passear</li>
+          <li>Marcas internacionais, cosméticos, chocolates, vinhos e artigos esportivos</li>
+          <li>Espaço kids (Aventura Center) para as crianças enquanto os adultos compram</li>
+          <li>💎 Se sobrar disposição, o <b>Pueblito Los Dominicos</b> (artesanato chileno: lápis-lazúli, lã, cerâmica) fica a 10 min de Uber — presentes com cara de Chile</li>
+        </ul>
+        <div class="go"><b class="title">Como chegar (do Mestizo)</b>
+          <div>🚗 <b>Uber: 10 min</b>, ~CLP 4–5 mil por carro.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">18h45</div>
+      <div>
+        <h3>Jantar no Boulevard do Parque Arauco</h3>
+        <p>Área gastronômica a céu aberto (aquecida) com restaurantes ótimos para grupo grande — jantar resolvido sem deslocamento extra.</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">20h30</div>
+      <div>
+        <h3>Retorno ao hotel</h3>
+        <div class="go"><b class="title">Como voltar</b>
+          <div>🚗 <b>Uber: 20–25 min</b>, ~CLP 8–10 mil por carro (com sacolas de compras, é o mais prático).</div>
+          <div>🚇 Metrô: Manquehue → Baquedano/U. Católica (Linha 1, ~20 min) — o metrô fecha ~23h.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="day wine" id="d23">
+  <div class="dayhead">
+    <span class="dnum">Quinta-feira · 23/07</span>
+    <h2>San Cristóbal 🚡 + Viña Concha y Toro 🍷 <span class="booked">✓ Transfer fechado</span></h2>
+  </div>
+  <div class="daybody">
+
+    <div class="stop">
+      <div class="time">09h45<small>→ 12h00</small></div>
+      <div>
+        <h3>Cerro San Cristóbal — funicular + teleférico 🚡</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Funicular+San+Cristobal,+Pio+Nono+450,+Bellavista" target="_blank">Entrada: Plaza Caupolicán, fim da rua Pío Nono (Bellavista) 📍</a></p>
+        <ul>
+          <li><b>Subam de funicular (abre 10h) e desçam de teleférico</b> — o passeio que as crianças mais amam em Santiago; comprem o combo Funicular + Teleférico na bilheteria</li>
+          <li>No topo: Santuário da Virgem, mote con huesillo e a melhor vista panorâmica da cidade com a Cordilheira nevada</li>
+          <li>Crianças pagam tarifa reduzida (até 2 anos grátis no teleférico); funicular e teleférico têm acesso para carrinho</li>
+          <li>A descida de teleférico termina na <b>estação Oasis</b> (Pedro de Valdivia Norte) — já do lado certo da cidade para o almoço</li>
+        </ul>
+        <div class="go"><b class="title">Como chegar (do hotel)</b>
+          <div>🚶 <b>A pé: ~15 min</b> — atravessar o rio na altura do metrô Baquedano e seguir pela Pío Nono até o final.</div>
+          <div>🚗 Uber: 5–7 min, ~CLP 3–4 mil por carro (bom para os avós e o bebê).</div>
+        </div>
+        <div class="tip"><b class="title">De olho no relógio</b>Cheguem 9h45 para pegar a abertura sem fila — o transfer da vinícola sai 14h do hotel, então a folga é justa mas suficiente. Casaco extra: lá em cima venta e faz mais frio.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">12h00</div>
+      <div>
+        <h3>Almoço — Pizzería Tiramisú</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Pizzeria+Tiramisu,+Av.+Isidora+Goyenechea+3141,+Las+Condes" target="_blank">Av. Isidora Goyenechea 3141, Las Condes 📍</a></p>
+        <p>Clássico de Santiago, ótimo para grupos e crianças. <b>Reservem</b> — lota mesmo em dia de semana. Almocem sem pressa mas de olho no relógio: o transfer sai 14h.</p>
+        <div class="go"><b class="title">Como chegar (da estação Oasis do teleférico)</b>
+          <div>🚗 <b>Uber: 8 min</b>, ~CLP 3–4 mil por carro · 🚶 A pé: ~20 min · Volta ao hotel: Uber 10–12 min (saiam do restaurante até 13h35, o transfer é 14h).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">14h00<small>→ 15h30</small></div>
+      <div>
+        <h3>Transfer para Pirque</h3>
+        <p>Voltem ao hotel até 13h50 para o embarque (confirmem o ponto com a empresa). Trajeto de ~1h–1h15.</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">16h00<small>~2h</small></div>
+      <div>
+        <h3>Tour Viña Concha y Toro</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Vina+Concha+y+Toro,+Av.+Virginia+Subercaseaux+210,+Pirque" target="_blank">Av. Virginia Subercaseaux 210, Pirque 📍</a></p>
+        <ul><li>Jardins, vinhedos, degustação e a famosa adega <b>Casillero del Diablo</b> 😈</li><li>Crianças podem entrar no tour (sem degustação, claro) — os jardins são ótimos para elas</li><li>Loja no final: preços melhores que no free shop</li></ul>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">18h30<small>→ 20h00</small></div>
+      <div><h3>Retorno a Santiago</h3></div>
+    </div>
+
+    <div class="stop">
+      <div class="time">20h00</div>
+      <div>
+        <h3>Jantar de despedida 🥂</h3>
+        <ul>
+          <li><b>Baco</b> — Nueva de Lyon 113, Providencia (metrô Los Leones) · bistrô franco-chileno, adega incrível</li>
+          <li><b>Liguria</b> — Av. Providencia 1373 (metrô Manuel Montt) · clássico chileno animado</li>
+        </ul>
+        <div class="go"><b class="title">Como chegar</b><div>🚇 Metrô Linha 1 (2–3 estações do hotel) ou 🚗 Uber 8–10 min. Reservar mesa para 10 é essencial.</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="day" id="d24">
+  <div class="dayhead">
+    <span class="dnum">Sexta-feira · 24/07</span>
+    <h2>Últimos passeios e retorno ao Brasil ✈️</h2>
+  </div>
+  <div class="daybody">
+
+    <div class="stop">
+      <div class="time">Manhã</div>
+      <div>
+        <h3>Café + check-out (até 12h)</h3>
+        <p>Deixem as malas guardadas na recepção se o voo for à tarde.</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">09h00<small>→ 11h00</small></div>
+      <div>
+        <h3>Despedida: Cerro Santa Lucía</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Cerro+Santa+Lucia,+Santiago" target="_blank">Entrada pela Alameda 📍</a> · gratuito · 🚶 10 min a pé do hotel</p>
+        <ul><li>Jardins, fontes e o castelinho Hidalgo — última vista panorâmica e fotos de despedida</li><li>Subida por escadas e rampas (~15 min); com o bebê, prefiram o colo ao carrinho</li><li>Alternativa se estiver muito frio: caminhada por Lastarria/Parque Forestal</li></ul>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">Voo</div>
+      <div>
+        <h3>Saída para o aeroporto</h3>
+        <div class="go"><b class="title">Planejamento</b>
+          <div>🚐 Van (Transvip/Delfos) ou 2 Ubers XL · trajeto 30–40 min <b>sem</b> trânsito.</div>
+          <div>⏰ Regra de ouro: sair do hotel <b>3h30 antes</b> do voo internacional (o SCL costuma ter filas longas na imigração).</div>
+          <div>💡 Reservem a van na véspera pela recepção do hotel.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<!-- ===== ABA 2: CHECKLIST ===== -->
+<div class="tabview" id="tab-checklist">
+  <h2 class="tabtitle">Checklist ✅</h2>
+  <p class="tabsub">Marque conforme for resolvendo — fica salvo neste aparelho.</p>
+<section class="day" id="lembretes">
+  <div class="dayhead" style="background:linear-gradient(135deg,#1E4034,#2E6B52)">
+    <span class="dnum">Checklist da viagem</span>
+    <h2>Lembretes e reservas ✅</h2>
+  </div>
+  <div class="daybody">
+
+    <div class="stop">
+      <div class="time">Antes de<small>embarcar</small></div>
+      <div>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> <b>Ski Total</b> — ligar/WhatsApp: reservar <b>10 kits</b> de roupa de neve para retirada <b>segunda ~17h15</b> (confirmar que a loja abre até 19h30+) e devolução quarta ~10h</label></li>
+          <li><label><input type="checkbox"> <b>Sky Costanera</b> — comprar 10 ingressos com hora marcada: <b>segunda 20/07, 14h30</b> em <a href="https://www.skycostanera.cl" target="_blank">skycostanera.cl</a> (0–4 anos grátis, 5–12 tarifa reduzida)</label></li>
+          <li><label><input type="checkbox"> <b>Transfer Farellones</b> — confirmar com a empresa: ponto de embarque no Le Méridien e se dá para <b>pular a parada de aluguel</b> na volta</label></li>
+          <li><label><input type="checkbox"> <b>Reservas de restaurante (mesa p/ 10):</b> dom — Lastarria (Chipe Libre/Casa Lastarria) · seg — Patio Bellavista (jantar) · qua — Mestizo (almoço com vista no Bicentenario) · qui — Pizzería Tiramisú (almoço) e Baco ou Liguria (jantar de despedida)</label></li>
+          <li><label><input type="checkbox"> <b>Farmácia</b> — remédio de enjoo (curvas de Farellones), protetor solar fator alto e itens do bebê</label></li>
+          <li><label><input type="checkbox"> <b>Concha y Toro</b> — reconfirmar horário de embarque do transfer (14h no hotel)</label></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">Seg 20<small>à noite</small></div>
+      <div>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> A partir das <b>20h</b>: conferir WhatsApp com o <b>horário exato da van</b> de Farellones (estimado 5h30–6h30)</label></li>
+          <li><label><input type="checkbox"> Pedir <b>breakfast box</b> para 10 pessoas na recepção (a van passa antes do café abrir)</label></li>
+          <li><label><input type="checkbox"> Separar as roupas de neve por pessoa e preparar a mochila do dia (lanches, água, protetor, trocador do bebê, passaportes)</label></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">Ter 21<small>em Farellones</small></div>
+      <div>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Ao descer da van: <b>combinar horário e ponto de encontro do retorno</b> com o motorista e salvar o WhatsApp dele</label></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">Qui 23<small>à noite</small></div>
+      <div>
+        <ul class="checklist">
+          <li><label><input type="checkbox"> Reservar na recepção a <b>van para o aeroporto</b> de quinta (sair 3h30 antes do voo)</label></li>
+          <li><label><input type="checkbox"> Conferir passaportes, cartões de embarque e organizar as malas (vinhos bem embalados na mala despachada!)</label></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<!-- ===== ABA 3: GUIA ===== -->
+<div class="tabview" id="tab-guia">
+  <h2 class="tabtitle">Guia de transporte 🚇</h2>
+  <p class="tabsub">Metrô, Uber, dinheiro e clima — o essencial para o grupo.</p>
+<section class="guide" id="guia">
+  <h2>🚇 Guia rápido de transporte para o grupo</h2>
+
+  <h3>Metrô de Santiago</h3>
+  <ul>
+    <li>Comprem <b>2 cartões Bip!</b> na estação (~CLP 1.550 cada + carga). <b>Um cartão paga várias pessoas</b>: é só passar na catraca uma vez por pessoa.</li>
+    <li>Tarifa: ~CLP 800–900 por viagem. Bebê no colo não paga.</li>
+    <li>Linha 1 (vermelha) é a espinha dorsal do roteiro: <b>U. Católica / Baquedano → Tobalaba → El Golf → Escuela Militar → Manquehue</b>.</li>
+    <li>Funciona ~6h às 23h. Evitem 7h30–9h e 18h–19h30 (lotado para carrinho de bebê).</li>
+  </ul>
+
+  <h3>Uber / Cabify / DiDi</h3>
+  <ul>
+    <li>Funcionam muito bem e são baratos. Para 10 pessoas: <b>2 carros XL</b> (até 5–6 passageiros) ou 3 UberX.</li>
+    <li>Corridas dentro da cidade: CLP 4–9 mil por carro (R$ 25–55).</li>
+    <li>Para o bebê: por lei crianças vão no banco de trás; levem a cadeirinha portátil se tiverem.</li>
+  </ul>
+
+  <h3>Ônibus (Red)</h3>
+  <p>Aceita o mesmo cartão Bip!, mas com grupo grande + crianças, a combinação <b>metrô + Uber</b> é bem mais prática. Deixem o ônibus só como plano C.</p>
+
+  <h3>Dinheiro e clima</h3>
+  <ul>
+    <li>Cartão de crédito é aceito em quase tudo; levem algo em pesos para feirinhas e gorjetas (10% é praxe em restaurantes).</li>
+    <li>Julho = inverno: manhãs de 0–5 °C, tardes de 12–15 °C. Casacos sempre, e escurece cedo (~18h).</li>
+  </ul>
+</section>
+</div>
+
+<!-- ===== ABA 4: DÚVIDAS ===== -->
+<div class="tabview" id="tab-chat">
+  <h2 class="tabtitle">Dúvidas 💬</h2>
+  <p class="tabsub">Pergunte qualquer coisa sobre a viagem — respondo na hora, até sem internet.</p>
+  <div class="chatbox">
+    <div class="msgs" id="msgs">
+      <div class="msg bot">Olá! 👋 Sou o assistente do roteiro. Pergunte sobre horários, endereços, como chegar, o que levar... ou toque numa sugestão abaixo.</div>
+    </div>
+    <div class="chips">
+      <button onclick="ask('Que horas sai a van pra Farellones?')">🚐 Van de Farellones</button>
+      <button onclick="ask('Qual o endereço do hotel?')">🏨 Endereço do hotel</button>
+      <button onclick="ask('O que fazemos na quarta?')">🗓️ Programa de quarta</button>
+      <button onclick="ask('O que levar pra neve?')">❄️ O que levar pra neve</button>
+      <button onclick="ask('Como funciona o metrô?')">🚇 Metrô</button>
+      <button onclick="ask('Vai fazer quanto de frio?')">🌡️ Clima</button>
+    </div>
+    <div class="inputrow">
+      <input id="q" type="text" placeholder="Escreva sua pergunta..." onkeydown="if(event.key==='Enter')send()">
+      <button onclick="send()">➤</button>
+    </div>
+  </div>
+</div>
+
+<p class="foot">Roteiro da família · Santiago, 19–24 de julho · Feito com ❤️ por Hudson</p>
+</main>
+
+<nav class="tabbar">
+  <button class="active" id="tb-roteiro" onclick="go('roteiro')"><span class="ic">🗓️</span>Roteiro</button>
+  <button id="tb-checklist" onclick="go('checklist')"><span class="ic">✅</span>Checklist</button>
+  <button id="tb-guia" onclick="go('guia')"><span class="ic">🚇</span>Guia</button>
+  <button id="tb-chat" onclick="go('chat')"><span class="ic">💬</span>Dúvidas</button>
+</nav>
+
+<script>
+// ===== TABS =====
+function go(t){
+  document.querySelectorAll('.tabview').forEach(v=>v.classList.remove('active'));
+  document.querySelectorAll('.tabbar button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+t).classList.add('active');
+  document.getElementById('tb-'+t).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ===== CHECKLIST: persistência local (cada pessoa marca no seu aparelho) =====
+try{
+  const boxes=document.querySelectorAll('#tab-checklist input[type="checkbox"]');
+  boxes.forEach((b,i)=>{
+    const k='rot-check-'+i;
+    try{ if(localStorage.getItem(k)==='1') b.checked=true; }catch(e){}
+    b.addEventListener('change',()=>{ try{localStorage.setItem(k, b.checked?'1':'0');}catch(e){} });
+  });
+}catch(e){}
+
+// ===== ASSISTENTE DE DÚVIDAS (local, por regras — funciona offline) =====
+function norm(t){return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
+
+const KB=[
+ {k:['van','transfer farellones','que horas sai','recogida','embarque farellones','acordar','madrugada'],
+  a:'🚐 A van compartilhada de Farellones passa no hotel entre 5h30 e 6h30 de TERÇA (21/07). O horário exato chega por WhatsApp na segunda à noite, após as 20h. Desçam ao lobby 10 min antes — e peçam breakfast box na recepção na véspera, o café ainda estará fechado!'},
+ {k:['hotel','le meridien','onde estamos hospedados','endereco do hotel'],
+  a:'🏨 Le Méridien Santiago — Av. Libertador Bernardo O\'Higgins 136 (Alameda), ao lado do centro cultural GAM. Metrôs U. Católica e Baquedano a 3–5 min a pé. O bairro Lastarria fica logo atrás.'},
+ {k:['domingo','dia 19','chegada','primeiro dia','lastarria'],
+  a:'🗓️ DOMINGO 19: chegada ~14h, check-in, descanso. 17h passeio no Barrio Lastarria (5 min a pé) com sorvete no Emporio La Rosa. 19h30 jantar em Lastarria (Chipe Libre, Casa Lastarria ou Bocanáriz).'},
+ {k:['segunda','dia 20','plaza de armas','catedral','centro historico'],
+  a:'🗓️ SEGUNDA 20: 9h30 Plaza de Armas + Catedral · 12h30 almoço no centro (Mercado Central) · 14h30 Sky Costanera (ingressos com hora marcada!) · 16h15 aluguel das roupas na Ski Total · Uber pro hotel com as sacolas · 19h15 jantar no Patio Bellavista. Voltar até 21h30: terça a van passa de madrugada!'},
+ {k:['terca','dia 21','farellones','neve','tubing','treno'],
+  a:'🗓️ TERÇA 21 — DIA DE NEVE ❄️: van 5h30–6h30 · parada de ~1h na loja do km 4 (vocês já estarão equipados — café quente!) · parque 9h~16h: tubing, trenó, teleférico · descida com parada de devolução dos outros · hotel ~18h30. Levem: remédio de enjoo (40 curvas!), protetor solar, passaportes, lanches e água.'},
+ {k:['quarta','dia 22','bicentenario','flamingo','mestizo','parque arauco','shopping','compras'],
+  a:'🗓️ QUARTA 22: 9h45 devolução das roupas (Ski Total) · 10h45 Parque Bicentenario (flamingos + playground) · 12h30 almoço no Mestizo (reservar! vista linda) · 14h15 Parque Arauco: Distrito de Lujo, compras, espaço kids · 18h45 jantar no Boulevard · Uber pro hotel.'},
+ {k:['quinta','dia 23','san cristobal','funicular','teleferico','tiramisu'],
+  a:'🗓️ QUINTA 23: 9h45 Cerro San Cristóbal — sobe de funicular (abre 10h), desce de teleférico até a estação Oasis · 12h almoço na Pizzería Tiramisú (8 min de Uber) · 13h35 volta ao hotel · 14h TRANSFER pra Viña Concha y Toro (já fechado ✓) · tour ~16h com degustação e adega Casillero del Diablo · 20h jantar de despedida no Baco ou Liguria.'},
+ {k:['sexta','dia 24','volta','ultimo dia','santa lucia','check out','checkout'],
+  a:'🗓️ SEXTA 24: café + check-out até 12h (malas ficam na recepção) · 9h passeio de despedida no Cerro Santa Lucía (10 min a pé, grátis) · saída pro aeroporto 3h30 antes do voo — van Transvip/Delfos ou 2 Ubers XL, reservar na recepção na quinta.'},
+ {k:['roupa','aluguel','ski total','casaco','bota','luva','o que levar pra neve','devolucao','equipamento'],
+  a:'❄️ Roupas de neve: alugamos SEGUNDA às 16h15 na Ski Total (Av. Apoquindo 4900, 3 estações do Sky no metrô). Kit: casaco + calça impermeáveis, botas, luvas, gorro (~CLP 15–25 mil/pessoa). Devolução QUARTA ~10h no mesmo lugar. No dia da neve: vistam a 1ª camada em casa e levem a roupa na van.'},
+ {k:['metro','bip','linha 1','como funciona o metro'],
+  a:'🚇 Metrô: comprem 2 cartões Bip! na estação (~CLP 1.550 + carga). UM cartão paga o grupo todo — passa na catraca uma vez por pessoa. Tarifa ~CLP 800–900; bebê no colo não paga. Nossa linha é a 1 (vermelha): U. Católica/Baquedano → Tobalaba → Escuela Militar → Manquehue. Funciona ~6h–23h; evitem 7h30–9h e 18h–19h30 (lotado).'},
+ {k:['uber','taxi','cabify','didi','carro','corrida'],
+  a:'🚗 Uber/Cabify/DiDi funcionam ótimo e são baratos. Para 10 pessoas: 2 carros XL (5–6 lugares) ou 3 UberX. Corridas na cidade: CLP 4–9 mil por carro (R$ 25–55). Crianças no banco de trás por lei; pro bebê, cadeirinha portátil se tiverem.'},
+ {k:['clima','frio','temperatura','tempo','chuva','quanto de frio'],
+  a:'🌡️ Julho = inverno em Santiago: manhãs de 0–5°C, tardes de 12–15°C, e escurece cedo (~18h). Em Farellones (2.430 m) faz bem mais frio. Casacos sempre, camadas, e protetor solar — o sol de montanha queima mesmo no frio.'},
+ {k:['dinheiro','peso','cambio','cartao','gorjeta','quanto custa','propina'],
+  a:'💰 Cartão de crédito é aceito em quase tudo. Levem alguns pesos pra feirinhas e gorjetas (10% é praxe em restaurantes — vem sugerida na conta como "propina"). Referências: metrô ~CLP 900, Uber na cidade CLP 4–9 mil, kit de neve CLP 15–25 mil.'},
+ {k:['crianca','bebe','carrinho','fralda','kids','playground'],
+  a:'👶 Com as crianças: no funicular o carrinho vai dobrado; no teleférico o bebê vai no colo. Sky Costanera: 0–4 anos não pagam. Farellones: trocador portátil, hidratação (altitude!) e revezamento perto da cafeteria. Parque Arauco tem espaço kids (Aventura Center); Bicentenario tem playground ótimo.'},
+ {k:['enjoo','remedio','curva','farmacia'],
+  a:'💊 A subida a Farellones tem ~40 curvas fechadas. Quem enjoa: remédio 30 min antes de sair do hotel, principalmente as crianças. Comprem na farmácia antes de viajar (está no Checklist!).'},
+ {k:['aeroporto','voo','transvip','desembarque','scl'],
+  a:'✈️ Aeroporto SCL ↔ hotel: ~30–40 min sem trânsito. Na chegada: van oficial Transvip/Delfos no desembarque (van exclusiva ~CLP 45–60 mil) ou 2 Ubers XL no estacionamento E3. Na volta (sexta): sair 3h30 antes do voo internacional — reservar a van na recepção na quinta.'},
+ {k:['restaurante','jantar','reserva','comer','almoco','onde comer','baco','liguria'],
+  a:'🍽️ Reservas pra mesa de 10: DOM jantar em Lastarria · SEG jantar Patio Bellavista · QUA almoço no Mestizo (vista do Bicentenario) e jantar no Boulevard do Arauco · QUI almoço Pizzería Tiramisú e jantar de despedida no Baco ou Liguria. Detalhes e endereços na aba Roteiro!'},
+ {k:['sky','costanera','ingresso sky','horario sky','mirante'],
+  a:'🌇 Sky Costanera: mirante a 300 m no Costanera Center (metrô Tobalaba). Vamos SEGUNDA às 14h30 — Cordilheira nevada em plena luz. Aberto 10h–22h; 0–4 anos grátis, 5–12 tarifa reduzida. Comprar antes com hora marcada em skycostanera.cl!'},
+ {k:['concha y toro','tour vinho','degustacao','pirque','casillero','vinicola','vinho'],
+  a:'🍷 Viña Concha y Toro (Av. Virginia Subercaseaux 210, Pirque): QUINTA, transfer JÁ FECHADO ✓ saindo 14h do hotel (~1h15 de viagem). Tour ~2h com jardins, vinhedos, degustação e a adega Casillero del Diablo. Crianças entram (sem degustação 😄) e a loja no final tem preço melhor que free shop.'},
+ {k:['passaporte','documento','seguro','visto'],
+  a:'🛂 Passaportes sempre na mochila do dia — às vezes há controle na estrada de Farellones. Brasileiro não precisa de visto pro Chile (turismo). Levem também o comprovante do seguro viagem se tiverem.'}
+];
+
+function answer(q){
+  const n=norm(q);
+  let best=null,score=0;
+  for(const item of KB){
+    let s=0;
+    for(const k of item.k){ if(n.includes(norm(k))) s+=k.length; }
+    if(s>score){score=s;best=item;}
+  }
+  if(best) return best.a;
+  return '🤔 Essa eu não sei de cabeça! Tente palavras como "van", "metrô", "quarta", "roupas", "clima", "restaurantes"... ou pergunte pro Hudson no grupo do WhatsApp 😄';
+}
+
+function push(txt,who){
+  const d=document.createElement('div');
+  d.className='msg '+who; d.textContent=txt;
+  document.getElementById('msgs').appendChild(d);
+  document.getElementById('msgs').scrollTop=99999;
+}
+function send(){
+  const i=document.getElementById('q'); const v=i.value.trim();
+  if(!v) return; i.value='';
+  push(v,'user');
+  setTimeout(()=>push(answer(v),'bot'),350);
+}
+function ask(t){ push(t,'user'); setTimeout(()=>push(answer(t),'bot'),350); }
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
+}
+</script>
+</body>
+</html>
