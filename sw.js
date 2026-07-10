@@ -1,6 +1,6 @@
-// Service worker: network-first (sempre busca a versao mais nova quando ha internet;
-// se estiver offline - Farellones, estrada de Pirque - serve a ultima versao em cache)
-const CACHE = 'roteiro-santiago-v4';
+// Service worker v5: network-first FURANDO o cache HTTP (cache:'no-cache')
+// Com internet: sempre a versao mais nova. Offline: ultima versao salva.
+const CACHE = 'roteiro-santiago-v5';
 const ASSETS = ['./index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
@@ -17,7 +17,7 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   e.respondWith(
-    fetch(e.request)
+    fetch(e.request, { cache: 'no-cache' })
       .then(resp => {
         const copy = resp.clone();
         caches.open(CACHE).then(c => c.put(e.request, copy));
