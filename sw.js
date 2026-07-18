@@ -1,6 +1,6 @@
 // Service worker v5: network-first FURANDO o cache HTTP (cache:'no-cache')
 // Com internet: sempre a versao mais nova. Offline: ultima versao salva.
-const CACHE = 'roteiro-santiago-v5';
+const CACHE = 'roteiro-santiago-v7';
 const ASSETS = ['./index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
