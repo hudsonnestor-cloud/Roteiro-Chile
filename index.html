@@ -262,7 +262,7 @@
 <section class="day" id="d20">
   <div class="dayhead">
     <span class="dnum">Segunda-feira · 20/07</span>
-    <h2>Centro histórico + Sky Costanera + aluguel das roupas</h2>
+    <h2>Troca de Guarda + centro + Sky + aluguel das roupas</h2>
   </div>
   <div class="daybody">
 
@@ -272,14 +272,47 @@
     </div>
 
     <div class="stop">
-      <div class="time">09h30</div>
+      <div class="time">09h40<small>→ 10h00</small></div>
+      <div>
+        <h3>Saída para o Palácio de La Moneda</h3>
+        <div class="go"><b class="title">Como chegar (do hotel)</b>
+          <div>🚶 <b>A pé: 12 min</b> pela Alameda, ou 🚇 metrô U. Católica → La Moneda (Linha 1, 2 estações).</div>
+          <div>Ponto de encontro: <a href="https://maps.google.com/?q=Plaza+de+la+Constitucion,+Santiago" target="_blank">Plaza de la Constitución 📍</a> — cheguem 9h50 pra pegar bom lugar.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">10h00<small>~30 min</small></div>
+      <div>
+        <h3>Troca de Guarda no La Moneda 🎺🐎</h3>
+        <p class="addr">Gratuito · sem reserva · segunda 20/07 é dia PAR = tem cerimônia!</p>
+        <ul>
+          <li>Desfile dos Carabineros com banda e esquadrão montado — tradição desde 1851</li>
+          <li>As crianças vão amar os cavalos, e a banda às vezes toca <b>Aquarela do Brasil</b> pros turistas brasileiros 🇧🇷</li>
+          <li>Se houver visita oficial no palácio, pode ser cancelada sem aviso — nesse caso é só seguir o passeio, nada se perde</li>
+        </ul>
+        <div class="tip"><b class="title">Atenção</b>Região central movimentada: celulares no bolso da frente e mochilas fechadas — reforcem com o grupo.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">10h40</div>
+      <div>
+        <h3>Paseo Bandera — a rua mais colorida de Santiago 🎨</h3>
+        <p class="addr"><a href="https://maps.google.com/?q=Paseo+Bandera,+Santiago" target="_blank">Calle Bandera (pedestre) 📍</a> · fica no caminho pro norte</p>
+        <p>Calçadão com piso pintado em arte colorida — parada de 15 min pras melhores fotos do centro. Sai do La Moneda e desemboca quase na Plaza de Armas.</p>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="time">11h00</div>
       <div>
         <h3>Plaza de Armas + Catedral Metropolitana</h3>
         <p class="addr"><a href="https://maps.google.com/?q=Plaza+de+Armas,+Santiago" target="_blank">Plaza de Armas, Centro Histórico 📍</a></p>
         <ul><li>Catedral, Correio Central, Museu Histórico Nacional (fachadas)</li><li>Artistas de rua e pintores na praça</li></ul>
-        <div class="go"><b class="title">Como chegar (do hotel)</b>
-          <div>🚇 <b>Metrô: Baquedano → Plaza de Armas (Linha 5 direto, 4 estações, ~10 min)</b>.</div>
-          <div>🚗 Uber: 10 min, ~CLP 4–5 mil por carro.</div>
+        <div class="go"><b class="title">Como chegar</b>
+          <div>🚶 <b>A pé: 5 min</b> — o Paseo Bandera termina praticamente na praça.</div>
         </div>
         <div class="tip"><b class="title">Segunda-feira no centro</b>Vários museus fecham às segundas, mas o passeio aqui é a rua: praça, catedral, calçadão Paseo Ahumada — tudo aberto e mais vazio que no fim de semana.</div>
       </div>
@@ -1063,6 +1096,8 @@ try{
 function norm(t){return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');}
 
 const KB=[
+ {k:['troca de guarda','guarda','la moneda','cambio de guardia','carabineros','desfile'],
+  a:'🎺 Troca de Guarda no Palácio de La Moneda: SEGUNDA 20/07 às 10h (julho 2026 = dias pares), na Plaza de la Constitución — 12 min a pé do hotel. Gratuito, sem reserva, ~30 min: banda + cavalaria dos Carabineros, e às vezes tocam Aquarela do Brasil! Cheguem 9h50. Pode ser cancelada se houver visita oficial — aí é só seguir pro Paseo Bandera e Plaza de Armas.'},
  {k:['la birra','hamburguer','burger','birra bar','lanche'],
   a:'🍔 La Birra Bar (Don Carlos 3200, El Golf) — QUINTA no almoço, 12h em ponto! A hamburgueria argentina eleita entre as melhores do mundo (4.8★, 11 mil avaliações). Chegando na abertura não tem fila. Peçam: Golden Cheeseburger dupla, Crispy Onion e batatas doces; chicken tenders pras crianças. Pedido no balcão com beeper — rápido, perfeito pro transfer da vinícola às 14h. ~CLP 10–14 mil/pessoa.'},
  {k:['sorvete','emporio','la rosa','gelato','doce'],
